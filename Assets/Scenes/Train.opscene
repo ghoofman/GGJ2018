@@ -1,0 +1,65 @@
+{
+	"models": [
+		{
+			"name": "TrainEngineEmpty",
+			"opm": "TrainEngineEmpty.opm",
+			"type": "MESH",
+			"position": [0,0,0],
+			"scale": [1,1,1],
+			"rotation": [0,1.5700000000000003,0],
+			"children": [],
+			"gameType": "Train",
+			"boundingBox": {
+				"min": [-1.6801732778549194,-0.06769412755966187,-4.628159523010254],
+				"max": [1.6801732778549194,3.5236873626708984,4.638486385345459]
+			},
+			"userData": {},
+			"material": {
+				"opacity": "",
+				"color": [1,1,1],
+				"texture": "TextureScales.png"
+			},
+			"scripts": {}
+		},
+		{
+			"name": "box",
+			"opm": "box.opm",
+			"type": "MESH",
+			"position": [0,1.3830193292049522,0],
+			"scale": [0.28280584047903323,1,0.235593575081668],
+			"rotation": [0,0,0],
+			"children": [],
+			"gameType": "TrainTrigger",
+			"boundingBox": {
+				"min": [-0.5,-0.5,-0.5],
+				"max": [0.5,0.5,0.5]
+			},
+			"userData": {},
+			"material": {
+				"opacity": "",
+				"color": [1,1,1]
+			},
+			"scripts": {}
+		},
+		{
+			"name": "WeaponPlate",
+			"opm": "WeaponPlate.opm",
+			"type": "MESH",
+			"position": [-2.913344656021267,1.7123476385070227,-0.7331134688361498],
+			"scale": [1,1,1],
+			"rotation": [0,0,0],
+			"children": [],
+			"gameType": "WeaponPlate",
+			"boundingBox": {
+				"min": [-0.5,-0.5,-0.05140835419297218],
+				"max": [0.5,0.5,0.20500852167606354]
+			},
+			"userData": {},
+			"material": {
+				"opacity": "",
+				"color": [1,1,1],
+				"texture": "TextureScales.png"
+			},
+			"scripts": {}
+		}]
+}

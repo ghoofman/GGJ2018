@@ -1,7 +1,7 @@
 #version 330 core
 
-out float fragmentdepth;
+//out vec4 FragColor;
 
 void main(){
-	fragmentdepth = gl_FragCoord.z;
+	//FragColor = vec4(1, 0, 0, 1);
 }

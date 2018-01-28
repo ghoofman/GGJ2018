@@ -1,0 +1,87 @@
+{
+	"models": [
+		{
+			"name": "TrainCar",
+			"opm": "TrainCar.opm",
+			"type": "MESH",
+			"position": [0,0,0],
+			"scale": [1,1,1],
+			"rotation": [0,1.5700000000000003,0],
+			"children": [],
+			"gameType": "TrainCar",
+			"boundingBox": {
+				"min": [-1.6801732778549194,-0.06769412755966187,-4.628159523010254],
+				"max": [1.6801732778549194,3.5236873626708984,4.715427875518799]
+			},
+			"userData": {},
+			"material": {
+				"opacity": "",
+				"color": [1,1,1],
+				"texture": "TextureScales.png"
+			},
+			"scripts": {}
+		},
+		{
+			"name": "WeaponPlate",
+			"opm": "WeaponPlate.opm",
+			"type": "MESH",
+			"position": [0,1.7347338351657267,-0.7451353782297332],
+			"scale": [1,1,1],
+			"rotation": [0,0,0],
+			"children": [],
+			"gameType": "WeaponPlate",
+			"boundingBox": {
+				"min": [-0.5,-0.5,-0.05140835419297218],
+				"max": [0.5,0.5,0.20500852167606354]
+			},
+			"userData": {},
+			"material": {
+				"opacity": "",
+				"color": [1,1,1],
+				"texture": "TextureScales.png"
+			},
+			"scripts": {}
+		},
+		{
+			"name": "WeaponPlate",
+			"opm": "WeaponPlate.opm",
+			"type": "MESH",
+			"position": [2.421180189700815,1.7347338351657267,-0.6616208307300215],
+			"scale": [1,1,1],
+			"rotation": [0,0,0],
+			"children": [],
+			"gameType": "WeaponPlate",
+			"boundingBox": {
+				"min": [-0.5,-0.5,-0.05140835419297218],
+				"max": [0.5,0.5,0.20500852167606354]
+			},
+			"userData": {},
+			"material": {
+				"opacity": "",
+				"color": [1,1,1],
+				"texture": "TextureScales.png"
+			},
+			"scripts": {}
+		},
+		{
+			"name": "WeaponPlate",
+			"opm": "WeaponPlate.opm",
+			"type": "MESH",
+			"position": [-2.4650176590040487,1.7347338351657267,-0.7750496143443276],
+			"scale": [1,1,1],
+			"rotation": [0,0,0],
+			"children": [],
+			"gameType": "WeaponPlate",
+			"boundingBox": {
+				"min": [-0.5,-0.5,-0.05140835419297218],
+				"max": [0.5,0.5,0.20500852167606354]
+			},
+			"userData": {},
+			"material": {
+				"opacity": "",
+				"color": [1,1,1],
+				"texture": "TextureScales.png"
+			},
+			"scripts": {}
+		}]
+}

@@ -4,6 +4,7 @@
 #include "./OPengine.h"
 #include "Main.h"
 #include "GameState.h"
+#include "SceneLoader.h"
 
 //////////////////////////////////////
 // Application Methods
@@ -12,17 +13,42 @@
 OPwindow mainWindow;
 
 void ApplicationInit() {
+
 	OPCMAN.Init(OPIFEX_ASSETS);
 	OPloadersAddDefault();
+	OPscriptAddLoader();
+	SceneAddLoader();
+	OPskeletonAddLoader();
+	OPskeletonAnimationAddLoader();
 
 	OPrenderSetup();
 
 	OPwindowSystemInit();
-	mainWindow.Init(NULL, OPwindowParameters("Main Window", false, 1280, 720));
+	
 
+//#ifndef _DEBUG
+//	OPmonitor primary = OPmonitor::GetAll().primary;
+//	mainWindow.Init(&primary, OPwindowParameters("Main Window", false, primary.VideoModeCurrent.Width, primary.VideoModeCurrent.Height));	
+//#else
+	mainWindow.Init(NULL, OPwindowParameters("Main Window", false, 1280, 720));
+	//mainWindow.Init(NULL, OPwindowParameters("Main Window", false, 2560, 1300));
+//#endif
 	OPrenderInit(&mainWindow);
 
-	OPgameState::Change(&GS_EXAMPLE);
+
+	// Sound System initialize
+	OPfmodInit();
+
+	// Physics Setup
+	OPphysXInit();
+
+	OPGAMEPADS.SetDeadzones(0.2f);
+
+	
+	
+	OPfontSystemLoadEffects();
+
+	OPgameState::Change(&GS_GAME_STATE);
 }
 
 OPint ApplicationUpdate(OPtimer* timer) {

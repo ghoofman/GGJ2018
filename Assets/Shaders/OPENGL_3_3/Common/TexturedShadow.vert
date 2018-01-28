@@ -1,15 +1,18 @@
 #version 330 core
 
 // Input vertex data, different for all executions of this shader.
-in vec3 aPosition;
-in vec3 aNormal;
-in vec2 aUV;
+layout(location = 0) in vec3 aPosition;
+layout(location = 1) in vec3 aNormal;
+layout(location = 2) in vec3 aTangent;
+layout(location = 3) in vec3 aBinormal;
+layout(location = 4) in vec2 aUV;
 
-// Output data ; will be interpolated for each fragment.
-out vec2 vUV;
-out vec3 vNormal;
-out vec4 vShadowCoord;
-out vec3 vLightDirection;
+out VS_OUT {
+    vec3 FragPos;
+    vec3 Normal;
+    vec2 TexCoords;
+    vec4 FragPosLightSpace;
+} vs_out;
 
 // Values that stay constant for the whole mesh.
 uniform mat4 uWorld;
@@ -17,20 +20,14 @@ uniform mat4 uView;
 uniform mat4 uProj;
 uniform mat4 uViewShadow;
 uniform mat4 uProjShadow;
-uniform mat4 uBias;
-uniform vec3 uLightDirection;
 
 void main(){
 
 	// Output position of the vertex, in clip space : uMVP * position
-	gl_Position = uProj * uView * uWorld * vec4(aPosition,1);
+	gl_Position = uProj * uView * uWorld * vec4(aPosition, 1.0);	
 	
-	vShadowCoord = uBias * uProjShadow * uViewShadow * uWorld * vec4(aPosition,1);
-	
-	// UV of the vertex. No special space for this one.
-	vUV = aUV;
-
-	vLightDirection = (uView * vec4(uLightDirection,0)).xyz;
-
-	vNormal = ( uView * uWorld * vec4(aNormal,0)).xyz;
+    vs_out.FragPos = vec3(uWorld * vec4(aPosition, 1.0));
+    vs_out.Normal = transpose(inverse(mat3(uWorld))) * aNormal;
+    vs_out.TexCoords = vec2(aUV.x, 1.0 - aUV.y);
+    vs_out.FragPosLightSpace = uProjShadow * uViewShadow * vec4(vs_out.FragPos, 1.0);
 }
